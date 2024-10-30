@@ -20,7 +20,7 @@ cityForm.addEventListener('submit', async e => {
     cityForm.reset();
 
     const data = await forecast.getWeather(city);
-
+    infoBlock.innerHTML = 'Loading...';
     updateUI(formatData(data));
   } catch (error) {
     infoBlock.innerHTML = error.message;
